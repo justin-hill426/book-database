@@ -2,6 +2,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Date
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+# establishing connectivity with the engine
 engine = create_engine('sqlite:///books.db', echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -20,7 +21,3 @@ class Book(Base):
     def __repr__(self):
         return f'Title: {self.title}, Author: {self.author}, Published Date: {self.published_date}, Price: {self.price}'
 
-# create a database
-# books.db
-# create a model
-# title, author, price
